@@ -1,5 +1,4 @@
 import {fixture, test} from 'testcafe';
-
 import { axeCheck, createReport } from 'axe-testcafe';
 import {clearCookies} from "../utils";
 

@@ -1,11 +1,12 @@
 import { render } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe'
 import logo from "./logo.svg";
+import { voiceOver } from "@guidepup/guidepup";
 
 expect.extend(toHaveNoViolations)
 
 it('should have alt tag', async () => {
-  const { container } = render(<img src={logo} className="App-logo" />)
+  const { container } = render(<img src={logo} />)
   const results = await axe(container)
 
   expect(results).toHaveNoViolations()
@@ -51,3 +52,19 @@ it('should button name', async () => {
 
   expect(results).toHaveNoViolations()
 })
+
+it('should ', async ()  =>{
+  render(<input type="text"/>)
+
+  // Start VoiceOver.
+  await voiceOver.start();
+
+  // Move to the next item.
+  await voiceOver.next();
+
+  // Stop VoiceOver.
+  await voiceOver.stop();
+  const itemTextLog = await voiceOver.itemTextLog();
+
+  expect(itemTextLog).toEqual('')
+});
