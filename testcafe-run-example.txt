@@ -1,0 +1,292 @@
+ TestCafe tests with Axe
+ ✖ Branch page should not have a11y errors
+
+   1) AssertionError: 2 violations found:
+      1) Elements must have sufficient color contrast
+          ".shb-sepu-app-sub-footer__links-list-item:nth-child(1) > .css-18e1rf1.shb-text-link-white.shb-text-link > span"
+        ".shb-sepu-app-sub-footer__links-list-item:nth-child(2) > .css-18e1rf1.shb-text-link-white.shb-text-link > span"
+        "a[href$="juridiska-dokument"] > span"
+        ".shb-sepu-app-sub-footer__links-list-item:nth-child(4) > .css-18e1rf1.shb-text-link-white.shb-text-link > span"
+        ".shb-sepu-app-sub-footer__links-list-item:nth-child(5) > .css-18e1rf1.shb-text-link-white.shb-text-link > span"
+        "a[href$="ekonomi-och-livet"] > span"
+        "a[href$="www\.handelsbanken\.com"] > span:nth-child(1) > .shb-text-link__first-words"
+        "a[href$="www\.handelsbanken\.com"] > span:nth-child(1) > .shb-text-link__last-word.css-jw5wnz > .shb-text-link__last-word--without-icon"
+        "a[href$="www\.handelsbanken\.dk"] > span:nth-child(1) > .shb-text-link__last-word.css-jw5wnz > .shb-text-link__last-word--without-icon"
+        "a[href$="www\.handelsbanken\.fi"] > span:nth-child(1) > .shb-text-link__last-word.css-jw5wnz > .shb-text-link__last-word--without-icon"
+        "a[href$="www\.handelsbanken\.nl"] > span:nth-child(1) > .shb-text-link__last-word.css-jw5wnz > .shb-text-link__last-word--without-icon"
+        "a[href$="www\.handelsbanken\.no"] > span:nth-child(1) > .shb-text-link__last-word.css-jw5wnz > .shb-text-link__last-word--without-icon"
+        ":root > span:nth-child(1) > .shb-text-link__last-word.css-jw5wnz > .shb-text-link__last-word--without-icon"
+      2) Heading levels should only increase by one
+        ".col-md-pull-6 > div > .js-shb-block.shb-text > .shb-cms-contentstack__paragraph > .shb-cms-contentstack__text.shb-text > h3"
+      : expected false to be truthy
+
+      Browser: Safari 15.6.1 / macOS 10.15.7
+
+          6 |    .page`https://www.handelsbanken.se/sv/hitta-bankkontor/alingsas`
+          7 |    .beforeEach(clearCookies)
+          8 |
+          9 |test('Branch page should not have a11y errors', async t => {
+         10 |    const { violations } = await axeCheck(t);
+       > 11 |    await t.expect(violations.length === 0).ok(createReport(violations));
+         12 |});
+
+         at <anonymous> (/Users/erik/work/testcafe/ui/branch.ts:11:45)
+         at fulfilled (/Users/erik/work/testcafe/ui/branch.ts:5:58)
+
+
+ TestCafe tests with Axe
+ ✖ Landing page should not have a11y errors
+
+   1) AssertionError: 1 violations found:
+      1) Elements must have sufficient color contrast
+          ".shb-sepu-app-sub-footer__links-list-item:nth-child(1) > .css-18e1rf1.shb-text-link-white.shb-text-link > span"
+        ".shb-sepu-app-sub-footer__links-list-item:nth-child(2) > .css-18e1rf1.shb-text-link-white.shb-text-link > span"
+        "a[href$="juridiska-dokument"] > span"
+        ".shb-sepu-app-sub-footer__links-list-item:nth-child(4) > .css-18e1rf1.shb-text-link-white.shb-text-link > span"
+        ".shb-sepu-app-sub-footer__links-list-item:nth-child(5) > .css-18e1rf1.shb-text-link-white.shb-text-link > span"
+        "a[href$="ekonomi-och-livet"] > span"
+        "a[href$="www\.handelsbanken\.com"] > span:nth-child(1) > .shb-text-link__first-words"
+        "a[href$="www\.handelsbanken\.com"] > span:nth-child(1) > .shb-text-link__last-word.css-jw5wnz > .shb-text-link__last-word--without-icon"
+        "a[href$="www\.handelsbanken\.dk"] > span:nth-child(1) > .shb-text-link__last-word.css-jw5wnz > .shb-text-link__last-word--without-icon"
+        "a[href$="www\.handelsbanken\.fi"] > span:nth-child(1) > .shb-text-link__last-word.css-jw5wnz > .shb-text-link__last-word--without-icon"
+        "a[href$="www\.handelsbanken\.nl"] > span:nth-child(1) > .shb-text-link__last-word.css-jw5wnz > .shb-text-link__last-word--without-icon"
+        "a[href$="www\.handelsbanken\.no"] > span:nth-child(1) > .shb-text-link__last-word.css-jw5wnz > .shb-text-link__last-word--without-icon"
+        ":root > span:nth-child(1) > .shb-text-link__last-word.css-jw5wnz > .shb-text-link__last-word--without-icon"
+      : expected false to be truthy
+
+      Browser: Safari 15.6.1 / macOS 10.15.7
+
+          7 |    .beforeEach(clearCookies)
+          8 |
+          9 |test('Landing page should not have a11y errors', async t => {
+         10 |    const { violations } = await axeCheck(t);
+         11 |
+       > 12 |    await t.expect(violations.length === 0).ok(createReport(violations));
+         13 |});
+         14 |
+         15 |test('Menu page should not have a11y errors', async t => {
+         16 |    const menuButton = Selector('#shb-sepu-header__menu-button');
+         17 |    await t.click(menuButton)
+
+         at <anonymous> (/Users/erik/work/testcafe/ui/landing.ts:12:45)
+         at fulfilled (/Users/erik/work/testcafe/ui/landing.ts:5:58)
+
+
+ ✖ Menu page should not have a11y errors
+
+   1) AssertionError: 5 violations found:
+      1) Certain ARIA roles must be contained by particular parents
+          ".shb-sepu-drawer-menu__overlay"
+      2) Buttons must have discernible text
+        ".shb-sepu-drawer-menu__hasChildren[data-test-id=""]:nth-child(2) > .shb-sepu-drawer-menu__alignment-row > .shb-sepu-drawer-menu-list-item__row__chevron > .shb-arrow-expander[aria-controls=""][title=""]"
+        ".shb-sepu-drawer-menu__hasChildren[data-test-id=""]:nth-child(3) > .shb-sepu-drawer-menu__alignment-row > .shb-sepu-drawer-menu-list-item__row__chevron > .shb-arrow-expander[aria-controls=""][title=""]"
+        ".shb-sepu-drawer-menu__hasChildren[data-test-id=""]:nth-child(4) > .shb-sepu-drawer-menu__alignment-row > .shb-sepu-drawer-menu-list-item__row__chevron > .shb-arrow-expander[aria-controls=""][title=""]"
+        ".shb-sepu-drawer-menu__hasChildren[data-test-id=""]:nth-child(5) > .shb-sepu-drawer-menu__alignment-row > .shb-sepu-drawer-menu-list-item__row__chevron > .shb-arrow-expander[aria-controls=""][title=""]"
+        ".shb-sepu-drawer-menu__hasChildren[data-test-id=""]:nth-child(6) > .shb-sepu-drawer-menu__alignment-row > .shb-sepu-drawer-menu-list-item__row__chevron > .shb-arrow-expander[aria-controls=""][title=""]"
+        ".shb-sepu-drawer-menu__hasChildren[data-test-id=""]:nth-child(7) > .shb-sepu-drawer-menu__alignment-row > .shb-sepu-drawer-menu-list-item__row__chevron > .shb-arrow-expander[aria-controls=""][title=""]"
+        ".shb-sepu-drawer-menu__hasChildren[data-test-id=""]:nth-child(8) > .shb-sepu-drawer-menu__alignment-row > .shb-sepu-drawer-menu-list-item__row__chevron > .shb-arrow-expander[aria-controls=""][title=""]"
+      3) Form elements must have labels
+        "#searchInHeader"
+      4) Ensures landmarks are unique
+        ".shb-application-tab-navigation"
+      5) Elements should not have tabindex greater than zero
+        ".shb-application-tab-navigation-link-container:nth-child(1) > span[role="link"]"
+        ".shb-application-tab-navigation-link-container:nth-child(2) > span[role="link"]"
+        ".shb-sepu-header__logo-wrapper"
+      : expected false to be truthy
+
+      Browser: Safari 15.6.1 / macOS 10.15.7
+
+         15 |test('Menu page should not have a11y errors', async t => {
+         16 |    const menuButton = Selector('#shb-sepu-header__menu-button');
+         17 |    await t.click(menuButton)
+         18 |
+         19 |    const { violations } = await axeCheck(t);
+       > 20 |    await t.expect(violations.length === 0).ok(createReport(violations));
+         21 |});
+         22 |
+         23 |test('Search should not have a11y errors', async t => {
+         24 |    const searchInputField = Selector('#searchInHeader');
+         25 |    await t.typeText(searchInputField, "Konto")
+
+         at <anonymous> (/Users/erik/work/testcafe/ui/landing.ts:20:45)
+         at fulfilled (/Users/erik/work/testcafe/ui/landing.ts:5:58)
+
+
+ ✖ Search should not have a11y errors
+
+   1) AssertionError: 4 violations found:
+      1) Certain ARIA roles must contain particular children
+          "#searchInHeader"
+      2) Form elements must have labels
+        "#searchInHeader"
+      3) Ensures landmarks are unique
+        ".shb-application-tab-navigation"
+      4) Elements should not have tabindex greater than zero
+        ".shb-application-tab-navigation-link-container:nth-child(1) > span[role="link"]"
+        ".shb-application-tab-navigation-link-container:nth-child(2) > span[role="link"]"
+        ".shb-sepu-header__logo-wrapper"
+      : expected false to be truthy
+
+      Browser: Safari 15.6.1 / macOS 10.15.7
+
+         23 |test('Search should not have a11y errors', async t => {
+         24 |    const searchInputField = Selector('#searchInHeader');
+         25 |    await t.typeText(searchInputField, "Konto")
+         26 |
+         27 |    const { violations } = await axeCheck(t);
+       > 28 |    await t.expect(violations.length === 0).ok(createReport(violations));
+         29 |});
+         30 |
+
+         at <anonymous> (/Users/erik/work/testcafe/ui/landing.ts:28:45)
+         at fulfilled (/Users/erik/work/testcafe/ui/landing.ts:5:58)
+
+
+ Route - search for branch
+ ✖ Landing page should not have a11y errors
+
+   1) AssertionError: {"initial":[{"id":"color-contrast","impact":"serious","tags":["cat.color","wcag2aa","wcag143"],"description":"Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio
+      thresholds","help":"Elements must have sufficient color
+      contrast","helpUrl":"https://dequeuniversity.com/rules/axe/3.5/color-contrast?application=axeAPI","nodes":[{"any":[{"id":"color-contrast","data":{"fgColor":"#005fa5","bgColor":"#043b62","contrastRatio":1.75,"fontSize":"12.0pt
+      (16px)","fontWeight":"normal","expectedContrastRatio":"4.5:1"},"relatedNodes":[{"html":"<div class=\"shb-sepu-app-sub-footer\">","target":[".shb-sepu-app-sub-footer"]}],"impact":"serious","message":"Element has
+      insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of
+      4.5:1"}],"all":[],"none":[],"impact":"serious","html":"<span>Behandling av personuppgifter</span>","target":[".shb-sepu-app-sub-footer__links-list-item:nth-child(1) > .css-18e1rf1.shb-text-link-white.shb-text-link >
+      span"],"failureSummary":"Fix any of the following:\n  Element has insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast
+      ratio of 4.5:1"},{"any":[{"id":"color-contrast","data":{"fgColor":"#005fa5","bgColor":"#043b62","contrastRatio":1.75,"fontSize":"12.0pt
+      (16px)","fontWeight":"normal","expectedContrastRatio":"4.5:1"},"relatedNodes":[{"html":"<div class=\"shb-sepu-app-sub-footer\">","target":[".shb-sepu-app-sub-footer"]}],"impact":"serious","message":"Element has
+      insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of
+      4.5:1"}],"all":[],"none":[],"impact":"serious","html":"<span>Cookies</span>","target":[".shb-sepu-app-sub-footer__links-list-item:nth-child(2) > .css-18e1rf1.shb-text-link-white.shb-text-link > span"],"failureSummary":"Fix
+      any of the following:\n  Element has insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of
+      4.5:1"},{"any":[{"id":"color-contrast","data":{"fgColor":"#005fa5","bgColor":"#043b62","contrastRatio":1.75,"fontSize":"12.0pt (16px)","fontWeight":"normal","expectedContrastRatio":"4.5:1"},"relatedNodes":[{"html":"<div
+      class=\"shb-sepu-app-sub-footer\">","target":[".shb-sepu-app-sub-footer"]}],"impact":"serious","message":"Element has insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size:
+      12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"}],"all":[],"none":[],"impact":"serious","html":"<span>Juridiska dokument</span>","target":["a[href$=\"juridiska-dokument\"] >
+      span"],"failureSummary":"Fix any of the following:\n  Element has insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast
+      ratio of 4.5:1"},{"any":[{"id":"color-contrast","data":{"fgColor":"#005fa5","bgColor":"#043b62","contrastRatio":1.75,"fontSize":"12.0pt
+      (16px)","fontWeight":"normal","expectedContrastRatio":"4.5:1"},"relatedNodes":[{"html":"<div class=\"shb-sepu-app-sub-footer\">","target":[".shb-sepu-app-sub-footer"]}],"impact":"serious","message":"Element has
+      insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of
+      4.5:1"}],"all":[],"none":[],"impact":"serious","html":"<span>Säkerhet</span>","target":[".shb-sepu-app-sub-footer__links-list-item:nth-child(4) > .css-18e1rf1.shb-text-link-white.shb-text-link >
+      span"],"failureSummary":"Fix any of the following:\n  Element has insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast
+      ratio of 4.5:1"},{"any":[{"id":"color-contrast","data":{"fgColor":"#005fa5","bgColor":"#043b62","contrastRatio":1.75,"fontSize":"12.0pt
+      (16px)","fontWeight":"normal","expectedContrastRatio":"4.5:1"},"relatedNodes":[{"html":"<div class=\"shb-sepu-app-sub-footer\">","target":[".shb-sepu-app-sub-footer"]}],"impact":"serious","message":"Element has
+      insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of
+      4.5:1"}],"all":[],"none":[],"impact":"serious","html":"<span>Sociala medier</span>","target":[".shb-sepu-app-sub-footer__links-list-item:nth-child(5) > .css-18e1rf1.shb-text-link-white.shb-text-link >
+      span"],"failureSummary":"Fix any of the following:\n  Element has insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast
+      ratio of 4.5:1"},{"any":[{"id":"color-contrast","data":{"fgColor":"#005fa5","bgColor":"#043b62","contrastRatio":1.75,"fontSize":"12.0pt
+      (16px)","fontWeight":"normal","expectedContrastRatio":"4.5:1"},"relatedNodes":[{"html":"<div class=\"shb-sepu-app-sub-footer\">","target":[".shb-sepu-app-sub-footer"]}],"impact":"serious","message":"Element has
+      insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of
+      4.5:1"}],"all":[],"none":[],"impact":"serious","html":"<span>Ekonomi och livet</span>","target":["a[href$=\"ekonomi-och-livet\"] > span"],"failureSummary":"Fix any of the following:\n  Element has insufficient color
+      contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of
+      4.5:1"},{"any":[{"id":"color-contrast","data":{"fgColor":"#005fa5","bgColor":"#043b62","contrastRatio":1.75,"fontSize":"12.0pt (16px)","fontWeight":"normal","expectedContrastRatio":"4.5:1"},"relatedNodes":[{"html":"<div
+      class=\"shb-sepu-app-sub-footer\">","target":[".shb-sepu-app-sub-footer"]}],"impact":"serious","message":"Element has insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size:
+      12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"}],"all":[],"none":[],"impact":"serious","html":"<span class=\"shb-text-link__first-words\">Global
+      </span>","target":["a[href$=\"www\\.handelsbanken\\.com\"] > span:nth-child(1) > .shb-text-link__first-words"],"failureSummary":"Fix any of the following:\n  Element has insufficient color contrast of 1.75 (foreground
+      color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of
+      4.5:1"},{"any":[{"id":"color-contrast","data":{"fgColor":"#005fa5","bgColor":"#043b62","contrastRatio":1.75,"fontSize":"12.0pt (16px)","fontWeight":"normal","expectedContrastRatio":"4.5:1"},"relatedNodes":[{"html":"<div
+      class=\"shb-sepu-app-sub-footer\">","target":[".shb-sepu-app-sub-footer"]}],"impact":"serious","message":"Element has insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size:
+      12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"}],"all":[],"none":[],"impact":"serious","html":"<span
+      class=\"shb-text-link__last-word--without-icon\">startsida</span>","target":["a[href$=\"www\\.handelsbanken\\.com\"] > span:nth-child(1) > .shb-text-link__last-word.css-jw5wnz >
+      .shb-text-link__last-word--without-icon"],"failureSummary":"Fix any of the following:\n  Element has insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font
+      weight: normal). Expected contrast ratio of 4.5:1"},{"any":[{"id":"color-contrast","data":{"fgColor":"#005fa5","bgColor":"#043b62","contrastRatio":1.75,"fontSize":"12.0pt
+      (16px)","fontWeight":"normal","expectedContrastRatio":"4.5:1"},"relatedNodes":[{"html":"<div class=\"shb-sepu-app-sub-footer\">","target":[".shb-sepu-app-sub-footer"]}],"impact":"serious","message":"Element has
+      insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of
+      4.5:1"}],"all":[],"none":[],"impact":"serious","html":"<span class=\"shb-text-link__last-word--without-icon\">Danmark</span>","target":["a[href$=\"www\\.handelsbanken\\.dk\"] > span:nth-child(1) >
+      .shb-text-link__last-word.css-jw5wnz > .shb-text-link__last-word--without-icon"],"failureSummary":"Fix any of the following:\n  Element has insufficient color contrast of 1.75 (foreground color: #005fa5, background color:
+      #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"},{"any":[{"id":"color-contrast","data":{"fgColor":"#005fa5","bgColor":"#043b62","contrastRatio":1.75,"fontSize":"12.0pt
+      (16px)","fontWeight":"normal","expectedContrastRatio":"4.5:1"},"relatedNodes":[{"html":"<div class=\"shb-sepu-app-sub-footer\">","target":[".shb-sepu-app-sub-footer"]}],"impact":"serious","message":"Element has
+      insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of
+      4.5:1"}],"all":[],"none":[],"impact":"serious","html":"<span class=\"shb-text-link__last-word--without-icon\">Finland</span>","target":["a[href$=\"www\\.handelsbanken\\.fi\"] > span:nth-child(1) >
+      .shb-text-link__last-word.css-jw5wnz > .shb-text-link__last-word--without-icon"],"failureSummary":"Fix any of the following:\n  Element has insufficient color contrast of 1.75 (foreground color: #005fa5, background color:
+      #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"},{"any":[{"id":"color-contrast","data":{"fgColor":"#005fa5","bgColor":"#043b62","contrastRatio":1.75,"fontSize":"12.0pt
+      (16px)","fontWeight":"normal","expectedContrastRatio":"4.5:1"},"relatedNodes":[{"html":"<div class=\"shb-sepu-app-sub-footer\">","target":[".shb-sepu-app-sub-footer"]}],"impact":"serious","message":"Element has
+      insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of
+      4.5:1"}],"all":[],"none":[],"impact":"serious","html":"<span class=\"shb-text-link__last-word--without-icon\">Nederländerna</span>","target":["a[href$=\"www\\.handelsbanken\\.nl\"] > span:nth-child(1) >
+      .shb-text-link__last-word.css-jw5wnz > .shb-text-link__last-word--without-icon"],"failureSummary":"Fix any of the following:\n  Element has insufficient color contrast of 1.75 (foreground color: #005fa5, background color:
+      #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"},{"any":[{"id":"color-contrast","data":{"fgColor":"#005fa5","bgColor":"#043b62","contrastRatio":1.75,"fontSize":"12.0pt
+      (16px)","fontWeight":"normal","expectedContrastRatio":"4.5:1"},"relatedNodes":[{"html":"<div class=\"shb-sepu-app-sub-footer\">","target":[".shb-sepu-app-sub-footer"]}],"impact":"serious","message":"Element has
+      insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of
+      4.5:1"}],"all":[],"none":[],"impact":"serious","html":"<span class=\"shb-text-link__last-word--without-icon\">Norge</span>","target":["a[href$=\"www\\.handelsbanken\\.no\"] > span:nth-child(1) >
+      .shb-text-link__last-word.css-jw5wnz > .shb-text-link__last-word--without-icon"],"failureSummary":"Fix any of the following:\n  Element has insufficient color contrast of 1.75 (foreground color: #005fa5, background color:
+      #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"},{"any":[{"id":"color-contrast","data":{"fgColor":"#005fa5","bgColor":"#043b62","contrastRatio":1.75,"fontSize":"12.0pt
+      (16px)","fontWeight":"normal","expectedContrastRatio":"4.5:1"},"relatedNodes":[{"html":"<div class=\"shb-sepu-app-sub-footer\">","target":[".shb-sepu-app-sub-footer"]}],"impact":"serious","message":"Element has
+      insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of
+      4.5:1"}],"all":[],"none":[],"impact":"serious","html":"<span class=\"shb-text-link__last-word--without-icon\">Storbritannien</span>","target":[":root > span:nth-child(1) > .shb-text-link__last-word.css-jw5wnz >
+      .shb-text-link__last-word--without-icon"],"failureSummary":"Fix any of the following:\n  Element has insufficient color contrast of 1.75 (foreground color: #005fa5, background color: #043b62, font size: 12.0pt (16px), font
+      weight: normal). Expected contrast ratio of 4.5:1"}]}],"search page":[{"id":"heading-order","impact":"moderate","tags":["cat.semantics","best-practice"],"description":"Ensures the order of headings is semantically
+      correct","help":"Heading levels should only increase by
+      one","helpUrl":"https://dequeuniversity.com/rules/axe/3.5/heading-order?application=axeAPI","nodes":[{"any":[{"id":"heading-order","data":3,"relatedNodes":[],"impact":"moderate","message":"Heading order
+      invalid"}],"all":[],"none":[],"impact":"moderate","html":"<h3><label class=\"shb-h3 shb-headline shb-search__headline\" for=\"internalSearch\">Sök</label></h3>","target":[".col-xs-12:nth-child(1) >
+      h3"],"failureSummary":"Fix any of the following:\n  Heading order invalid"}]},{"id":"label","impact":"critical","tags":["cat.forms","wcag2a","wcag412","wcag131","section508","section508.22.n"],"description":"Ensures every
+      form element has a label","help":"Form elements must have
+      labels","helpUrl":"https://dequeuniversity.com/rules/axe/3.5/label?application=axeAPI","nodes":[{"any":[{"id":"aria-label","data":null,"relatedNodes":[],"impact":"serious","message":"aria-label attribute does not exist or
+      is empty"},{"id":"aria-labelledby","data":null,"relatedNodes":[],"impact":"serious","message":"aria-labelledby attribute does not exist, references elements that do not exist or references elements that are
+      empty"},{"id":"implicit-label","data":null,"relatedNodes":[],"impact":"critical","message":"Form element does not have an implicit (wrapped)
+      <label>"},{"id":"explicit-label","data":null,"relatedNodes":[],"impact":"critical","message":"Form element does not have an explicit
+      <label>"},{"id":"non-empty-title","data":null,"relatedNodes":[],"impact":"serious","message":"Element has no title attribute or the title attribute is empty"}],"all":[],"none":[],"impact":"critical","html":"<input
+      autocomplete=\"off\" id=\"searchInHeader\" name=\"searchInHeader\" placeholder=\"Sök\" class=\"shb-input-text__text-input   css-u577xf\" maxlength=\"50\" inputmode=\"search\" data-test-id=\"shb-sepu-search__field\"
+      role=\"combobox\" aria-controls=\"searchInHeader__autosuggest-list\" aria-expanded=\"false\" list=\"searchInHeader_list\" value=\"Bromma\">","target":["#searchInHeader"],"failureSummary":"Fix any of the following:\n
+      aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Form element does not have an implicit (wrapped)
+      <label>\n  Form element does not have an explicit <label>\n  Element has no title attribute or the title attribute is
+      empty"}]},{"id":"landmark-unique","impact":"moderate","tags":["cat.semantics","best-practice"],"help":"Ensures landmarks are unique","description":"Landmarks must have a unique role or role/label/title (i.e. accessible
+      name)
+
+   combination","helpUrl":"https://dequeuniversity.com/rules/axe/3.5/landmark-unique?application=axeAPI","nodes":[{"any":[{"id":"landmark-is-unique","data":{"role":"navigation","accessibleText":null},"relatedNodes":[{"html":"<nav
+      class=\"shb-cms-article-top__nav\"></nav>","target":[".shb-cms-article-top__nav"]}],"impact":"moderate","message":"The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks
+      distinguishable"}],"all":[],"none":[],"impact":"moderate","html":"<nav data-shb-crawler=\"noindex\" class=\"shb-application-tab-navigation \">","target":[".shb-application-tab-navigation"],"failureSummary":"Fix any of the
+      following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"}]},{"id":"tabindex","impact":"serious","tags":["cat.keyboard","best-practice"],"description":"Ensures
+      tabindex attribute values are not greater than 0","help":"Elements should not have tabindex greater than
+      zero","helpUrl":"https://dequeuniversity.com/rules/axe/3.5/tabindex?application=axeAPI","nodes":[{"any":[{"id":"tabindex","data":null,"relatedNodes":[],"impact":"serious","message":"Element has a tabindex greater than
+      0"}],"all":[],"none":[],"impact":"serious","html":"<span tabindex=\"1\" role=\"link\">Gå till innehåll</span>","target":[".shb-application-tab-navigation-link-container:nth-child(1) >
+      span[role=\"link\"]"],"failureSummary":"Fix any of the following:\n  Element has a tabindex greater than 0"},{"any":[{"id":"tabindex","data":null,"relatedNodes":[],"impact":"serious","message":"Element has a tabindex
+      greater than 0"}],"all":[],"none":[],"impact":"serious","html":"<span tabindex=\"1\" role=\"link\">Gå till toppmeny</span>","target":[".shb-application-tab-navigation-link-container:nth-child(2) >
+      span[role=\"link\"]"],"failureSummary":"Fix any of the following:\n  Element has a tabindex greater than 0"},{"any":[{"id":"tabindex","data":null,"relatedNodes":[],"impact":"serious","message":"Element has a tabindex
+      greater than 0"}],"all":[],"none":[],"impact":"serious","html":"<a href=\"/sv/\" title=\"Handelsbanken - till startsidan\" tabindex=\"1\" accesskey=\"1\" class=\"shb-sepu-header__logo-wrapper\"><img
+      class=\"shb-sepu-header__logo\" itemprop=\"logo\" src=\"/sv/sepu/img/jedi/base/kit/shb-large-logo.svg\" alt=\"Handelsbanken\" height=\"22\" width=\"207\"
+      fetchpriority=\"high\"></a>","target":[".shb-sepu-header__logo-wrapper"],"failureSummary":"Fix any of the following:\n  Element has a tabindex greater than 0"}]}],"branch
+      page":[{"id":"heading-order","impact":"moderate","tags":["cat.semantics","best-practice"],"description":"Ensures the order of headings is semantically correct","help":"Heading levels should only increase by
+      one","helpUrl":"https://dequeuniversity.com/rules/axe/3.5/heading-order?application=axeAPI","nodes":[{"any":[{"id":"heading-order","data":3,"relatedNodes":[],"impact":"moderate","message":"Heading order
+      invalid"}],"all":[],"none":[],"impact":"moderate","html":"<h3>En bank i ditt område<br></h3>","target":[".col-md-pull-6 > div > .js-shb-block.shb-text > .shb-cms-contentstack__paragraph >
+      .shb-cms-contentstack__text.shb-text > h3"],"failureSummary":"Fix any of the following:\n  Heading order
+      invalid"}]},{"id":"label","impact":"critical","tags":["cat.forms","wcag2a","wcag412","wcag131","section508","section508.22.n"],"description":"Ensures every form element has a label","help":"Form elements must have
+      labels","helpUrl":"https://dequeuniversity.com/rules/axe/3.5/label?application=axeAPI","nodes":[{"any":[{"id":"aria-label","data":null,"relatedNodes":[],"impact":"serious","message":"aria-label attribute does not exist or
+      is empty"},{"id":"aria-labelledby","data":null,"relatedNodes":[],"impact":"serious","message":"aria-labelledby attribute does not exist, references elements that do not exist or references elements that are
+      empty"},{"id":"implicit-label","data":null,"relatedNodes":[],"impact":"critical","message":"Form element does not have an implicit (wrapped)
+      <label>"},{"id":"explicit-label","data":null,"relatedNodes":[],"impact":"critical","message":"Form element does not have an explicit
+      <label>"},{"id":"non-empty-title","data":null,"relatedNodes":[],"impact":"serious","message":"Element has no title attribute or the title attribute is empty"}],"all":[],"none":[],"impact":"critical","html":"<input
+      autocomplete=\"off\" id=\"searchInHeader\" name=\"searchInHeader\" placeholder=\"Sök\" class=\"shb-input-text__text-input   css-u577xf\" maxlength=\"50\" inputmode=\"search\" data-test-id=\"shb-sepu-search__field\"
+      role=\"combobox\" aria-controls=\"searchInHeader__autosuggest-list\" aria-expanded=\"false\" list=\"searchInHeader_list\" value=\"Bromma\">","target":["#searchInHeader"],"failureSummary":"Fix any of the following:\n
+      aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Form element does not have an implicit (wrapped)
+      <label>\n  Form element does not have an explicit <label>\n  Element has no title attribute or the title attribute is
+      empty"}]},{"id":"landmark-unique","impact":"moderate","tags":["cat.semantics","best-practice"],"help":"Ensures landmarks are unique","description":"Landmarks must have a unique role or role/label/title (i.e. accessible
+      name)
+
+   combination","helpUrl":"https://dequeuniversity.com/rules/axe/3.5/landmark-unique?application=axeAPI","nodes":[{"any":[{"id":"landmark-is-unique","data":{"role":"navigation","accessibleText":null},"relatedNodes":[{"html":"<nav
+      class=\"shb-cms-article-top__nav\"></nav>","target":[".shb-cms-article-top__nav"]}],"impact":"moderate","message":"The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks
+      distinguishable"}],"all":[],"none":[],"impact":"moderate","html":"<nav data-shb-crawler=\"noindex\" class=\"shb-application-tab-navigation \">","target":[".shb-application-tab-navigation"],"failureSummary":"Fix any of the
+      following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"}]},{"id":"tabindex","impact":"serious","tags":["cat.keyboard","best-practice"],"description":"Ensures
+      tabindex attribute values are not greater than 0","help":"Elements should not have tabindex greater than
+      zero","helpUrl":"https://dequeuniversity.com/rules/axe/3.5/tabindex?application=axeAPI","nodes":[{"any":[{"id":"tabindex","data":null,"relatedNodes":[],"impact":"serious","message":"Element has a tabindex greater than
+      0"}],"all":[],"none":[],"impact":"serious","html":"<span tabindex=\"1\" role=\"link\">Gå till innehåll</span>","target":[".shb-application-tab-navigation-link-container:nth-child(1) >
+      span[role=\"link\"]"],"failureSummary":"Fix any of the following:\n  Element has a tabindex greater than 0"},{"any":[{"id":"tabindex","data":null,"relatedNodes":[],"impact":"serious","message":"Element has a tabindex
+      greater than 0"}],"all":[],"none":[],"impact":"serious","html":"<span tabindex=\"1\" role=\"link\">Gå till toppmeny</span>","target":[".shb-application-tab-navigation-link-container:nth-child(2) >
+      span[role=\"link\"]"],"failureSummary":"Fix any of the following:\n  Element has a tabindex greater than 0"},{"any":[{"id":"tabindex","data":null,"relatedNodes":[],"impact":"serious","message":"Element has a tabindex
+      greater than 0"}],"all":[],"none":[],"impact":"serious","html":"<a href=\"/sv/\" title=\"Handelsbanken - till startsidan\" tabindex=\"1\" accesskey=\"1\" class=\"shb-sepu-header__logo-wrapper\"><img
+      class=\"shb-sepu-header__logo\" itemprop=\"logo\" src=\"/sv/sepu/img/jedi/base/kit/shb-large-logo.svg\" alt=\"Handelsbanken\" height=\"22\" width=\"207\"
+      fetchpriority=\"high\"></a>","target":[".shb-sepu-header__logo-wrapper"],"failureSummary":"Fix any of the following:\n  Element has a tabindex greater than 0"}]}]}: expected false to be truthy
+
+      Browser: Safari 15.6.1 / macOS 10.15.7
+
+         21 |    const link = Selector("[href=\"https://www.handelsbanken.se/sv/hitta-bankkontor/brommaplan\"]");
+         22 |    await t.click(link)
+         23 |    await t.wait(3000)
+         24 |    errors['branch page'] = (await axeCheck(t)).violations;
+         25 |
+       > 26 |    await t.expect(false).ok(JSON.stringify(errors));
+         27 |});
+
+         at <anonymous> (/Users/erik/work/testcafe/ui/routes/search-for-branch.ts:26:27)
+         at fulfilled (/Users/erik/work/testcafe/ui/routes/search-for-branch.ts:5:58)
+
+
+
+ 5/5 failed (38s)
